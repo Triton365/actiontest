@@ -11,24 +11,16 @@ jobs:
     permissions:
       contents: write
     steps:
-      - run: |
-          ls -a
-          pwd
       - uses: actions/checkout@v4
-        with:
-          sparse-checkout: |
-            test.py
-            test.txt
-          sparse-checkout-cone-mode: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11' 
       - run: |
-          ls -a
-          pwd
-          python test.py ${{ inputs.mc_version }}
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git symbolic-ref HEAD refs/heads/testbranch
+          git reset
+          python test.py ${{ inputs.mc_version }}
           git add --all
           git commit -m "action test commit"
           git push
