@@ -14,4 +14,4 @@ with open('test.txt','w') as f:
 
 import sys
 print('input test ↓')
-print(sys.argv[2])
+print(sys.argv[1])
