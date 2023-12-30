@@ -25,4 +25,4 @@ jobs:
           python test.py ${{ inputs.mc_version }}
           git add --all
           git commit -m "action test commit"
-          git push -u origin testbranch
+          git push
