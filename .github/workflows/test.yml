@@ -18,7 +18,7 @@ jobs:
       - run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git fetch origin testbranch
+          git fetch origin testbranch:testbranch
           git symbolic-ref HEAD refs/heads/testbranch
           git reset
           ls
