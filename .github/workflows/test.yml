@@ -9,6 +9,8 @@ jobs:
         with:
           python-version: '3.11' 
       - run: |
-          ls
           python test.py
-          ls
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git commit -am "action test commit"
+          git push
