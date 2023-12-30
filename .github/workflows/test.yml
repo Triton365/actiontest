@@ -9,7 +9,6 @@ jobs:
         with:
           python-version: '3.11' 
       - run: |
-          ls
           python test.py
-          ls
-      
+          git commit -am "test commit message"
+          git push
