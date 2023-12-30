@@ -11,3 +11,7 @@ except:
 
 with open('test.txt','w') as f:
     f.write(text)
+
+import sys
+print('input test ↓')
+print(sys.argv[2])
