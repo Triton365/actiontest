@@ -11,6 +11,9 @@ jobs:
     permissions:
       contents: write
     steps:
+      - run: |
+          ls -a
+          pwd
       - uses: actions/checkout@v4
         with:
           sparse-checkout: |
