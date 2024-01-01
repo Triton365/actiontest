@@ -37,5 +37,6 @@ jobs:
           mv ../test.py .
           git add --all
           git commit -m "action test commit"
+          git push origin master:testbranch
 
 # python test.py ${{ inputs.mc_version }}
