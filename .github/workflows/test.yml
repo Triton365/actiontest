@@ -16,8 +16,8 @@ jobs:
           python-version: '3.11' 
       - run: |
           git init
-          git config user.name github-actions
-          git config user.email github-actions@github.com
+          git config user.name actions-user
+          git config user.email actions@github.com
           git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
           git pull origin main
           python test.py ${{ inputs.mc_version }}
