@@ -21,7 +21,6 @@ jobs:
           git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
           git fetch origin
           git reset origin/testbranch
-          touch touch.txt
           git add --all
           git commit -m "action test commit"
           git push origin master:testbranch
