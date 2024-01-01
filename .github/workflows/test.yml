@@ -22,6 +22,7 @@ jobs:
       - run: |
           git status
           git fetch origin
+          git branch
       - run: |
           git status
           git reset origin/testbranch
