@@ -18,10 +18,12 @@ jobs:
           git config --global user.name actions-user
           git config --global user.email actions@github.com
           git clone https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
-          cd actiontest
       - run: |
-          ls
           pwd
+          ls
+          cd actiontest
+          pwd
+          ls
       - run: git status
       - run: git branch -a
       # - run: |
