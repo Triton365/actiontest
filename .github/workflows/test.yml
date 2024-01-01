@@ -20,10 +20,10 @@ jobs:
           git clone https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
       - run: |
           pwd
-          ls
+          ls -a
           cd actiontest
           pwd
-          ls
+          ls -a
       - run: git status
       - run: git branch -a
       # - run: |
