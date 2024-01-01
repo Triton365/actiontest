@@ -25,7 +25,7 @@ jobs:
           git init
           git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
           git fetch origin
-          git checkout main
+          git merge origin/main
           ls
           git status
           git branch -a
