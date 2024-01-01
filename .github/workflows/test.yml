@@ -27,7 +27,8 @@ jobs:
           git fetch origin
           git reset --hard origin/main
           mv test.py ..
-      - run: |
+      - name: run python script and push
+        run: |
           mkdir temp2
           cd temp2
           git init
@@ -35,8 +36,7 @@ jobs:
           git fetch origin
           git reset origin/testbranch
           mv ../test.py .
+          python test.py ${{ inputs.mc_version }}
           git add --all
           git commit -m "action test commit"
           git push origin master:testbranch
-
-# python test.py ${{ inputs.mc_version }}
