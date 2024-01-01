@@ -14,11 +14,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11' 
-      - run: |
+      - name: git config
+        run: |
           git config --global user.name actions-user
           git config --global user.email actions@github.com
-          git clone https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
-          cd actiontest
+      - name: get python script
+        run: |
+          mkdir temp
+          cd temp
+          git init
+          git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
+          git fetch origin
           git status
           git branch -a
       # - run: |
