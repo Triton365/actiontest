@@ -15,17 +15,23 @@ jobs:
         with:
           python-version: '3.11' 
       - run: |
-          git init
+          git clone https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
           git config user.name actions-user
           git config user.email actions@github.com
-          git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
-          git fetch origin
-      - run: |
-          git reset --hard origin/main
-          git reset origin/testbranch
-      - run: |
-          git add --all
-          git commit -m "action test commit"
-          git push origin master:testbranch
+      - run: git status
+      - run: git branch -a
+      # - run: |
+      #     git init
+      #     git config user.name actions-user
+      #     git config user.email actions@github.com
+      #     git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
+      #     git fetch origin
+      # - run: |
+      #     git reset --hard origin/main
+      #     git reset origin/testbranch
+      # - run: |
+      #     git add --all
+      #     git commit -m "action test commit"
+      #     git push origin master:testbranch
 
 # python test.py ${{ inputs.mc_version }}
