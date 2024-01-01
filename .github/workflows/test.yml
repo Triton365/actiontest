@@ -19,8 +19,9 @@ jobs:
           git config user.name actions-user
           git config user.email actions@github.com
           git remote add origin https://x-access-token:${{ github.token }}@github.com/$GITHUB_REPOSITORY
-          git pull origin main
-          python test.py ${{ inputs.mc_version }}
+          git fetch origin
           git add --all
           git commit -m "action test commit"
-          git push origin master:main
+          git push origin master:testbranch
+
+# python test.py ${{ inputs.mc_version }}
